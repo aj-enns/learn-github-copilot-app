@@ -23,6 +23,58 @@ describe('Task API', () => {
     expect(list.body).toHaveLength(1);
   });
 
+  it('trims surrounding whitespace from the title', async () => {
+    const app = createApp();
+    const created = await request(app).post('/tasks').send({ title: '  Padded title  ' });
+
+    expect(created.status).toBe(201);
+    expect(created.body.title).toBe('Padded title');
+  });
+
+  it('rejects a missing title with 400 and creates no task', async () => {
+    const app = createApp();
+
+    const res = await request(app).post('/tasks').send({});
+    expect(res.status).toBe(400);
+    expect(res.body).toEqual({
+      error: 'title is required and must be a non-empty string',
+    });
+
+    const list = await request(app).get('/tasks');
+    expect(list.body).toHaveLength(0);
+  });
+
+  it('rejects an empty or whitespace-only title with 400 and creates no task', async () => {
+    const app = createApp();
+
+    const empty = await request(app).post('/tasks').send({ title: '' });
+    expect(empty.status).toBe(400);
+    expect(empty.body.error).toContain('title');
+
+    const whitespace = await request(app).post('/tasks').send({ title: '   ' });
+    expect(whitespace.status).toBe(400);
+
+    const list = await request(app).get('/tasks');
+    expect(list.body).toHaveLength(0);
+  });
+
+  it.each([
+    ['a number', 123],
+    ['null', null],
+    ['a boolean', true],
+    ['an array', []],
+    ['an object', {}],
+  ])('rejects a non-string title (%s) with 400 and creates no task', async (_label, title) => {
+    const app = createApp();
+
+    const res = await request(app).post('/tasks').send({ title });
+    expect(res.status).toBe(400);
+    expect(res.body.error).toContain('title');
+
+    const list = await request(app).get('/tasks');
+    expect(list.body).toHaveLength(0);
+  });
+
   it('marks a task completed via PATCH', async () => {
     const app = createApp();
     const created = await request(app).post('/tasks').send({ title: 'Finish slides' });
