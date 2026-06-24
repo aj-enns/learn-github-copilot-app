@@ -1,4 +1,4 @@
-# Learn the GitHub Copilot app — a 45‑minute Lunch & Learn
+# Learn the GitHub Copilot app
 
 A hands‑on, copy‑paste‑able workshop for walking technical developers through the
 **[GitHub Copilot app](https://github.com/features/ai/github-app)** — the agent‑driven
