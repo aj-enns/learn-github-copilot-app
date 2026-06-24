@@ -3,7 +3,7 @@
 Thanks for helping make this a better resource for learning the GitHub Copilot app! 🎉
 
 This repo is a community **learning resource**, not an official GitHub product. The goal is a
-workshop that's accurate, easy to run, and friendly to newcomers.
+self‑guided walkthrough that's accurate, easy to follow, and friendly to newcomers.
 
 ## Ways to contribute
 
@@ -11,15 +11,15 @@ workshop that's accurate, easy to run, and friendly to newcomers.
   change.
 - **Improve the sample app or exercises** in [`sample-app/`](sample-app/) and
   [`exercises/`](exercises/).
-- **Add a new exercise** that demonstrates an app feature not yet covered.
+- **Add a new exercise** that exercises an app feature not yet covered.
 - **Report issues** — out‑of‑date steps, broken links, confusing instructions.
 
 ## Ground rules
 
 - Keep the sample app **small, dependency‑light, and beginner‑friendly**. Resist scope creep.
 - Keep `main` **green**: every change should keep `npm test` and `npm run build` passing.
-- The four intentional gaps in the sample app are **load‑bearing** for the demos — don't fix them
-  in `main`; they each have an exercise.
+- The four intentional gaps in the sample app are **load‑bearing** for the exercises — don't fix
+  them in `main`; they each have an exercise.
 - Cross‑check product claims against the
   [official docs](https://docs.github.com/copilot/how-tos/github-copilot-app/getting-started) and
   link to them rather than restating volatile details.

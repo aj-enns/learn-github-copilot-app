@@ -1,9 +1,9 @@
 # 02 · Your first agent session — the centerpiece
 
-**Time:** ~12 min · **Goal:** start a session from an issue, use **Plan** mode to agree on an
-approach, then **Interactive** mode to steer the agent to a real, tested change.
+**Goal:** start a session from an issue, use **Plan** mode to agree on an approach, then
+**Interactive** mode to steer the agent to a real, tested change.
 
-This is the most important module. Slow down and narrate what you're doing and why.
+This is the most important module. Take your time and pay attention to what you're doing and why.
 
 ## The change we'll make
 
@@ -16,8 +16,8 @@ behind it.
 1. In the sidebar, open **My work** and find the issue **"Add input validation to POST /tasks"**
    (create it first with [`seed-issues.md`](../exercises/seed-issues.md) if needed).
 2. Click the issue, then **New session**. The issue context loads automatically.
-3. Below the prompt, choose where the session runs: a **new working tree** (recommended for the
-   demo — it keeps your main checkout clean), your local repo, or a **cloud sandbox**.
+3. Below the prompt, choose where the session runs: a **new working tree** (recommended — it keeps
+   your main checkout clean), your local repo, or a **cloud sandbox**.
 4. Pick a **session mode**, **model**, and **reasoning effort** (more on these in
    [05](05-modes-and-models.md)).
 
@@ -32,11 +32,11 @@ Select **Plan** mode and prompt:
 > `title` should return `400` with a clear JSON error and must not create a task. Add tests
 > covering the happy path and the invalid cases.
 
-The agent proposes a plan. **Read it aloud.** Approve it, or steer it:
+The agent proposes a plan. **Read it carefully.** Approve it, or steer it:
 
 > Keep it dependency‑free — validate in the route handler, don't add a validation library.
 
-**Point to make:** Plan mode front‑loads the disagreements. You catch a wrong approach before any
+**Why it matters:** Plan mode front‑loads the disagreements. You catch a wrong approach before any
 code is written.
 
 ## Step 2 — Interactive mode (steer the work)
@@ -47,7 +47,7 @@ Switch to **Interactive** mode and let it implement. As it works:
 - Nudge it if needed:
   > Also return `400` when `title` is only whitespace, and add a test for that.
 
-**Point to make:** you're collaborating turn by turn — the agent suggests, you approve or redirect.
+**Why it matters:** you're collaborating turn by turn — the agent suggests, you approve or redirect.
 
 ## Step 3 — Confidence check with rubber duck (optional)
 

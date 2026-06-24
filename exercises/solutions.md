@@ -1,11 +1,11 @@
 # Reference solutions
 
-Use these to sanity‑check what the agent produced, or to reset after a demo. They're intentionally
-dependency‑free and match the style of the existing code. There's more than one correct answer —
-the agent's version may differ and still be right.
+Use these to sanity‑check what the agent produced, or to reset after working through an exercise.
+They're intentionally dependency‑free and match the style of the existing code. There's more than one
+correct answer — the agent's version may differ and still be right.
 
-> Don't paste these in during the talk. The point is to let the agent write them and review the
-> result together.
+> Don't read these until you've let the agent try. The point is to let the agent write them and then
+> review the result.
 
 ## Exercise 1 — Validate `POST /tasks`
 

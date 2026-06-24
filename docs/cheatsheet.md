@@ -1,6 +1,6 @@
 # Cheat sheet — GitHub Copilot app
 
-Project this during the session. One screen, the essentials.
+Keep this open while you work. One screen, the essentials.
 
 ## The core loop
 

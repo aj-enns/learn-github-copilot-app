@@ -1,8 +1,7 @@
 # 06 · Advanced features — a guided tour
 
-**Time:** ~3 min · **Goal:** show attendees the ceiling. Don't deep‑dive; point at each feature,
-say what it's for, and move on. Pick **one** to demo live if time allows (canvases is the crowd
-pleaser).
+**Goal:** see the ceiling. Don't try to master each feature now — learn what each one is for, then
+try **one** that interests you (canvases is a good first pick).
 
 ## Canvases — shared, interactive surfaces
 
@@ -67,4 +66,4 @@ concrete feedback, running on a **different model** than your main session. Invo
 - **Agent skills** (`/`‑commands) to package repeatable workflows.
 - **Voice dictation** to speak prompts instead of typing them.
 
-➡️ Back to the [facilitator guide](facilitator-guide.md) · or the [cheat sheet](cheatsheet.md)
+➡️ Back to the [walkthrough](walkthrough.md) · or the [cheat sheet](cheatsheet.md)
