@@ -1,7 +1,6 @@
-# 00 · Prerequisites & setup (send this before the session)
+# 00 · Prerequisites & setup
 
-Send this page to attendees a day ahead so everyone arrives ready. Setup eats demo time —
-front‑load it.
+Get this out of the way first so the rest of the walkthrough goes smoothly. None of it takes long.
 
 ## What you need
 
@@ -47,12 +46,12 @@ The **sidebar** is your map:
 - **Search** — search across your repositories.
 - **Sessions** — active agent sessions grouped by repository, plus **Quick chats**.
 
-## Facilitator pre‑flight
+## Quick checklist
 
 - [ ] Signed in, this repo connected.
-- [ ] Demo issues created (see [`../exercises/seed-issues.md`](../exercises/seed-issues.md)).
+- [ ] Practice issues created (see [`../exercises/seed-issues.md`](../exercises/seed-issues.md)).
 - [ ] `npm install` already run in `sample-app/`.
-- [ ] Decide which **model** you'll demo and confirm it's available to you.
-- [ ] Screen share set so the **right side panel** (where canvases/diffs open) is visible.
+- [ ] Picked a **model** you want to try and confirmed it's available to you.
+- [ ] Noted the **right side panel** — that's where canvases and diffs open.
 
 ➡️ Next: [01 · Quick chat](01-quick-chat.md)

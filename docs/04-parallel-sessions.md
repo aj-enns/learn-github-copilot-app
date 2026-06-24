@@ -1,7 +1,7 @@
 # 04 · Parallel sessions & worktrees
 
-**Time:** ~7 min · **Goal:** show the app's signature move — multiple agent sessions running at
-once, each isolated on its own branch and git worktree.
+**Goal:** see the app's signature move — multiple agent sessions running at once, each isolated on
+its own branch and git worktree.
 
 ## Why this matters
 
@@ -9,7 +9,7 @@ Most "AI in the editor" tools are single‑threaded: one conversation, one worki
 app runs **many sessions in parallel**, each in a **dedicated worktree and branch**, so progress on
 one task never clobbers another. You shift from *doing the work* to *directing several streams of it.*
 
-## Do it live
+## Try it
 
 While the PR from Module 3 is building, start two more sessions from issues:
 
@@ -18,7 +18,7 @@ While the PR from Module 3 is building, start two more sessions from issues:
 3. Session B — **"Fix: completing a task doesn't update updatedAt"** ([exercise 3](../exercises/README.md)).
 4. Give each a one‑line prompt and let them run.
 
-Now switch between **all three** sessions in the sidebar (grouped by repository). Call out:
+Now switch between **all three** sessions in the sidebar (grouped by repository). Notice:
 
 - Each session has its **own branch and worktree** — open two diffs side by side to prove the
   isolation.
@@ -26,14 +26,14 @@ Now switch between **all three** sessions in the sidebar (grouped by repository)
   DELETE endpoint; Interactive for the subtler bug).
 - Nothing blocks: Session A doesn't wait for Session B.
 
-## A good narration
+## The mental model
 
-> "I'm not waiting on any one agent. The DELETE endpoint is well‑scoped, so I'll let it run on
-> Autopilot. The `updatedAt` bug is subtler, so I'll keep that one Interactive and steer it. Both
-> live in their own worktree, so neither can step on the other — or on the validation PR that's
-> already in review."
+Think of it this way: you're not waiting on any one agent. The DELETE endpoint is well‑scoped, so
+you can let it run on Autopilot. The `updatedAt` bug is subtler, so keep that one Interactive and
+steer it. Both live in their own worktree, so neither can step on the other — or on the validation
+PR that's already in review.
 
-## Cloud sessions (mention)
+## Cloud sessions (good to know)
 
 Sessions can also run in **cloud sandboxes** (public preview) — fully isolated Linux environments
 hosted by GitHub. Great for offloading compute or picking work up from another device. More in

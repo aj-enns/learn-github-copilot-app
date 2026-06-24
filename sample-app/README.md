@@ -1,8 +1,8 @@
 # Sample app — Task API
 
-A deliberately tiny **Express + TypeScript** REST API used for the
-[GitHub Copilot app Lunch & Learn](../README.md). It exists to give the agent real, reviewable
-work during the session — not to be a production service.
+A deliberately tiny **Express + TypeScript** REST API used by the
+[Learn the GitHub Copilot app walkthrough](../README.md). It exists to give the agent real,
+reviewable work as you follow along — not to be a production service.
 
 ## Run it
 
@@ -27,7 +27,7 @@ npm start        # run the compiled server
 | `GET` | `/tasks/:id` | Get one task (404 if missing) |
 | `PATCH` | `/tasks/:id` | Set `{ "completed": true \| false }` |
 
-State is held **in memory**, so it resets on restart — perfect for repeatable demos.
+State is held **in memory**, so it resets on restart — easy to run an exercise repeatably.
 
 ## Intentional gaps (this is on purpose)
 

@@ -1,8 +1,8 @@
 ---
-name: Demo task
-about: A scoped task for driving a GitHub Copilot app session during the Lunch & Learn
+name: Practice task
+about: A scoped task for driving a GitHub Copilot app session while following the walkthrough
 title: ""
-labels: demo
+labels: practice
 ---
 
 ## Goal

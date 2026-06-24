@@ -1,7 +1,7 @@
 # Exercises
 
-Four self‑contained tasks built on real gaps in [`../sample-app`](../sample-app). Each one is the
-basis for a demo in the facilitator guide and maps to a ready‑made GitHub issue in
+Four self‑contained tasks built on real gaps in [`../sample-app`](../sample-app). Each one drives a
+module in the [walkthrough](../docs/walkthrough.md) and maps to a ready‑made GitHub issue in
 [`seed-issues.md`](seed-issues.md). Reference solutions are in [`solutions.md`](solutions.md) —
 don't peek until you've let the agent try.
 
@@ -10,10 +10,10 @@ tests that prove it.
 
 | # | Title | What's missing | Difficulty | Good for |
 | --- | --- | --- | --- | --- |
-| 1 | Validate `POST /tasks` | No input validation — accepts a missing/blank `title` | ⭐ | Plan → Interactive demo |
-| 2 | Add `DELETE /tasks/:id` | No delete route and no `TaskStore.remove()` | ⭐ | Autopilot demo |
-| 3 | Fix the `updatedAt` bug | `setCompleted` never refreshes `updatedAt` | ⭐⭐ | Subtle‑bug / Interactive demo |
-| 4 | Filter `GET /tasks?completed=` | No query‑param filtering | ⭐⭐ | Hands‑on attendee exercise |
+| 1 | Validate `POST /tasks` | No input validation — accepts a missing/blank `title` | ⭐ | Plan → Interactive |
+| 2 | Add `DELETE /tasks/:id` | No delete route and no `TaskStore.remove()` | ⭐ | Autopilot |
+| 3 | Fix the `updatedAt` bug | `setCompleted` never refreshes `updatedAt` | ⭐⭐ | Subtle bug / Interactive |
+| 4 | Filter `GET /tasks?completed=` | No query‑param filtering | ⭐⭐ | On your own |
 
 ## Exercise 1 — Validate `POST /tasks`
 

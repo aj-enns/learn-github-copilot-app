@@ -1,7 +1,6 @@
 # 05 · Modes, models & reasoning effort
 
-**Time:** ~2 min on screen · **Goal:** give attendees a mental model for the knobs they'll reach
-for in every session. This is a recap slide more than a demo.
+**Goal:** build a mental model for the knobs you'll reach for in every session.
 
 ## Session modes — how much autonomy
 
