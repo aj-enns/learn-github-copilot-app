@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: GitHub Copilot app docs
+    url: https://docs.github.com/copilot/how-tos/github-copilot-app/getting-started
+    about: Official getting-started and how-to docs for the GitHub Copilot app.
+  - name: Workshop walkthroughs
+    url: https://github.com/aj-enns/learn-github-copilot-app/tree/main/docs
+    about: The 45-minute facilitator guide and module walkthroughs.
