@@ -1,6 +1,7 @@
 import express, { type Express } from 'express';
 import { TaskStore } from './tasks/store.js';
 import { createTaskRouter } from './tasks/routes.js';
+import { renderTasksPage } from './tasks/view.js';
 
 /**
  * Build the Express application. A store can be injected to make testing easy.
@@ -11,6 +12,10 @@ export function createApp(store: TaskStore = new TaskStore()): Express {
 
   app.get('/health', (_req, res) => {
     res.json({ status: 'ok' });
+  });
+
+  app.get('/', (_req, res) => {
+    res.type('html').send(renderTasksPage(store.list()));
   });
 
   app.use('/tasks', createTaskRouter(store));

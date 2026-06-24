@@ -38,5 +38,9 @@ export class TaskStore {
     return task;
   }
 
+  seed(titles: string[]): void {
+    for (const title of titles) this.create(title);
+  }
+
   // Exercise 2: add remove(id) so the API can support DELETE /tasks/:id.
 }
