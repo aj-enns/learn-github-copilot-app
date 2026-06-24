@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import type { TaskStore } from './store.js';
+import { TASK_TITLE_ERROR, normalizeTaskTitle } from './validation.js';
 
 export function createTaskRouter(store: TaskStore): Router {
   const router = Router();
@@ -10,11 +11,17 @@ export function createTaskRouter(store: TaskStore): Router {
   });
 
   router.post('/', (req, res) => {
-    // Exercise 1: validate that req.body.title is a non-empty string and
-    // return 400 with a helpful message when it is not.
-    const { title } = req.body ?? {};
-    const task = store.create(title);
-    res.status(201).json(task);
+    try {
+      const title = normalizeTaskTitle(req.body?.title);
+      const task = store.create(title);
+      return res.status(201).json(task);
+    } catch (error) {
+      if (error instanceof Error && error.message === TASK_TITLE_ERROR) {
+        return res.status(400).json({ error: error.message });
+      }
+
+      throw error;
+    }
   });
 
   router.get('/:id', (req, res) => {

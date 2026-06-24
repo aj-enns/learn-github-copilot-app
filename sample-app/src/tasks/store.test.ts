@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { TaskStore } from './store.js';
+import { TASK_TITLE_ERROR } from './validation.js';
 
 describe('TaskStore', () => {
   it('creates a task with sensible defaults', () => {
@@ -10,6 +11,19 @@ describe('TaskStore', () => {
     expect(task.completed).toBe(false);
     expect(task.id).toBeTruthy();
     expect(task.createdAt).toBe(task.updatedAt);
+  });
+
+  it('trims surrounding whitespace from task titles', () => {
+    const store = new TaskStore();
+    const task = store.create('  Write the talk  ');
+
+    expect(task.title).toBe('Write the talk');
+  });
+
+  it('rejects blank task titles', () => {
+    const store = new TaskStore();
+
+    expect(() => store.create('   ')).toThrow(TASK_TITLE_ERROR);
   });
 
   it('lists every created task', () => {

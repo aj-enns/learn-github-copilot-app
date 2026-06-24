@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import type { Task } from './types.js';
+import { normalizeTaskTitle } from './validation.js';
 
 /**
  * In-memory task store. Intentionally small so it is easy to reason about
@@ -18,10 +19,11 @@ export class TaskStore {
   }
 
   create(title: string): Task {
+    const normalizedTitle = normalizeTaskTitle(title);
     const now = new Date().toISOString();
     const task: Task = {
       id: randomUUID(),
-      title,
+      title: normalizedTitle,
       completed: false,
       createdAt: now,
       updatedAt: now,
