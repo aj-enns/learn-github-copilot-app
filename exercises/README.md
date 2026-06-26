@@ -5,6 +5,10 @@ module in the [walkthrough](../docs/walkthrough.md) and maps to a ready‑made G
 [`seed-issues.md`](seed-issues.md). Reference solutions are in [`solutions.md`](solutions.md) —
 don't peek until you've let the agent try.
 
+If you want to reset the demo repository after a run-through, see
+[`demo-reset.md`](demo-reset.md). It preserves the seeded practice issues and removes extra
+issues and pull requests.
+
 `main` ships **green** (8 passing tests). Every exercise asks the agent to add behavior *and* the
 tests that prove it.
 
