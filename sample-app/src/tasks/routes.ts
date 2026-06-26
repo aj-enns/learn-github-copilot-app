@@ -10,11 +10,19 @@ export function createTaskRouter(store: TaskStore): Router {
   });
 
   router.post('/', (req, res) => {
-    // Exercise 1: validate that req.body.title is a non-empty string and
-    // return 400 with a helpful message when it is not.
     const { title } = req.body ?? {};
-    const task = store.create(title);
-    res.status(201).json(task);
+
+    if (typeof title !== 'string') {
+      return res.status(400).json({ error: 'Title must be a non-empty string' });
+    }
+
+    const trimmedTitle = title.trim();
+    if (trimmedTitle.length === 0) {
+      return res.status(400).json({ error: 'Title must be a non-empty string' });
+    }
+
+    const task = store.create(trimmedTitle);
+    return res.status(201).json(task);
   });
 
   router.get('/:id', (req, res) => {
