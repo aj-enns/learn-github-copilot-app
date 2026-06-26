@@ -39,4 +39,37 @@ describe('Task API', () => {
     const res = await request(createApp()).get('/tasks/does-not-exist');
     expect(res.status).toBe(404);
   });
+
+  it('rejects a missing title with 400 and does not create a task', async () => {
+    const app = createApp();
+
+    const res = await request(app).post('/tasks').send({});
+    expect(res.status).toBe(400);
+    expect(res.body.error).toBeTruthy();
+
+    const list = await request(app).get('/tasks');
+    expect(list.body).toHaveLength(0);
+  });
+
+  it('rejects a non-string title with 400 and does not create a task', async () => {
+    const app = createApp();
+
+    const res = await request(app).post('/tasks').send({ title: 42 });
+    expect(res.status).toBe(400);
+    expect(res.body.error).toBeTruthy();
+
+    const list = await request(app).get('/tasks');
+    expect(list.body).toHaveLength(0);
+  });
+
+  it('rejects a whitespace-only title with 400 and does not create a task', async () => {
+    const app = createApp();
+
+    const res = await request(app).post('/tasks').send({ title: '   ' });
+    expect(res.status).toBe(400);
+    expect(res.body.error).toBeTruthy();
+
+    const list = await request(app).get('/tasks');
+    expect(list.body).toHaveLength(0);
+  });
 });
